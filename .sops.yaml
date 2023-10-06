@@ -6,7 +6,7 @@ keys:
   # test key
   - &test age1925katzy5gws3f9hnvnlwspu6trxf488arwt6ayw3urg2mgumqhszxnmqh
 creation_rules:
-  - path_regex: secrets/dresden-zone-dns/[^/]+\.yaml$
+  - path_regex: secrets/dresden-zone/[^/]+\.yaml$
     key_groups:
       - pgp:
         - *admin_tassilo

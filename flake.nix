@@ -13,15 +13,15 @@
   };
 
   outputs = inputs@{ self, nixpkgs, microvm, sops-nix}: {
-    packages."x86_64-linux".dresden-zone-dns-microvm = self.nixosConfigurations.dresden-zone-dns.config.microvm.declaredRunner;
+    packages."x86_64-linux".dresden-zone-microvm = self.nixosConfigurations.dresden-zone.config.microvm.declaredRunner;
     nixosConfigurations = {
-      dresden-zone-dns = nixpkgs.lib.nixosSystem {
+      dresden-zone = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs self; };
           modules = [
             microvm.nixosModules.microvm
             sops-nix.nixosModules.sops
-            ./hosts/dresden-zone-dns
+            ./hosts/dresden-zone
             ./modules/DresdenZone
           ];
       };

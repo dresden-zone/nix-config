@@ -21,14 +21,14 @@ in
         socket = "store.socket";
       }
       {
-        source = "/var/lib/microvms/dresden-zone-dns-prod/etc";
+        source = "/var/lib/microvms/dresden-zone/etc";
         mountPoint = "/etc";
         tag = "etc";
         proto = "virtiofs";
         socket = "etc.socket";
       }
       {
-        source = "/var/lib/microvms/dresden-zone-dns-prod/var";
+        source = "/var/lib/microvms/dresden-zone/var";
         mountPoint = "/var";
         tag = "var";
         proto = "virtiofs";
@@ -37,7 +37,7 @@ in
     ];
   };
 
-  networking.hostName = "dresden-zone-dns"; # Define your hostname.
+  networking.hostName = "dresden-zone"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -60,7 +60,7 @@ in
   };
 
 
-  sops.defaultSopsFile = self + /secrets/dresden-zone-dns/secrets.yaml;
+  sops.defaultSopsFile = self + /secrets/dresden-zone/secrets.yaml;
 
   system.stateVersion = "23.05";
 }
