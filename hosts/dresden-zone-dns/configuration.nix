@@ -9,7 +9,7 @@ in
     vcpu = 6;
     interfaces = [{
       type = "tap";
-      id = "serv-dresden-zone-prod";
+      id = "serv-ddz-prod";
       mac = mac_addr;
     }];
     shares = [
@@ -47,7 +47,7 @@ in
     useDHCP = false;
     mac = mac_addr;
     matchOn = "mac";
-    addr4 = "172.20.73.69/25";
+    addr4 = "172.20.73.73/25";
     dns = [ "172.20.73.8" "9.9.9.9" ];
     routes = [
       {
@@ -60,7 +60,7 @@ in
   };
 
 
-  sops.defaultSopsFile = self + /secrets/data-hoarder/secrets.yaml;
+  sops.defaultSopsFile = self + /secrets/dresden-zone-dns/secrets.yaml;
 
   system.stateVersion = "23.05";
 }

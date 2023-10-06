@@ -51,7 +51,7 @@ in
   config =
     let
       # move out as options?
-      dvbwg-name = "wg-ddvb";
+      dd-zone-name = "wg-dd-zone";
       keepalive = 25;
 
       # helpers
@@ -89,13 +89,13 @@ in
       }];
 
       # stuff proper
-      dvbwg-netdev = {
+      dd-zone-netdev = {
         Kind = "wireguard";
-        Name = dvbwg-name;
+        Name = dd-zone-name;
         Description = "TLMS enterprise, highly available, biocomputing-neural-network maintained, converged network";
       };
 
-      dvbwg-wireguard = {
+      dd-zone-wireguard = {
         PrivateKeyFile = cfg.privateKeyFile;
       } //
       (if !isNull cfg.ownEndpoint.host then { ListenPort = cfg.ownEndpoint.port; } else { });
@@ -115,15 +115,15 @@ in
     lib.mkIf (!isNull cfg.addr4) {
       networking.wireguard.enable = true;
 
-      networking.firewall.trustedInterfaces = [ dvbwg-name ];
+      networking.firewall.trustedInterfaces = [ dd-zone-name ];
 
-      systemd.network.netdevs."30-${dvbwg-name}" = {
-        netdevConfig = dvbwg-netdev;
-        wireguardConfig = dvbwg-wireguard;
+      systemd.network.netdevs."30-${dd-zone-name}" = {
+        netdevConfig = dd-zone-netdev;
+        wireguardConfig = dd-zone-wireguard;
         wireguardPeers = peerconf;
       };
-      systemd.network.networks."30-${dvbwg-name}" = {
-        matchConfig.Name = dvbwg-name;
+      systemd.network.networks."30-${dd-zone-name}" = {
+        matchConfig.Name = dd-zone-name;
         networkConfig = {
           Address = "${cfg.addr4}/${toString cfg.prefix4}";
         };

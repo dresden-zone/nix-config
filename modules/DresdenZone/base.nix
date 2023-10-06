@@ -65,7 +65,8 @@ in
   networking.firewall.allowedTCPPorts = [ 22 ];
   users.users.root = {
     openssh.authorizedKeys.keyFiles = [
-      ../../keys/ssh/revol-xut
+      ../../keys/ssh/tassilo
+      ../../keys/ssh/melody
       ../../keys/ssh/marcel
     ];
   };
