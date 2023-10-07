@@ -11,7 +11,7 @@ in
   dresden-zone.net.wg = {
     ownEndpoint.host = "c3d2.hosts.dresden.zone";
     ownEndpoint.port = port;
-    addr4 = "10.66.66.1";
+    addr4 = "10.77.77.1";
     prefix4 = 24;
     privateKeyFile = config.sops.secrets.wg-seckey.path;
     publicKey = "WDvCObJ0WgCCZ0ORV2q4sdXblBd8pOPZBmeWr97yphY=";
@@ -19,12 +19,12 @@ in
       {
         # Tassilo
         publicKey = "vgo3le9xrFsIbbDZsAhQZpIlX+TuWjfEyUcwkoqUl2Y=";
-        addr4 = "10.66.66.2";
+        addr4 = "10.77.77.2";
       }
       {
         # marcel
         publicKey = "Txd/qTDazvKcB1bIavm0Kilr/O7RkFwi9YGjjv88u2I=";
-        addr4 = "10.66.66.3";
+        addr4 = "10.77.77.3";
       }
     ];
   };
