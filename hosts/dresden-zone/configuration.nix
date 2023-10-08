@@ -1,6 +1,6 @@
 { self, ... }:
 let
-  mac_addr = "02:db:db:db:db:db";
+  mac_addr = "02:da:da:da:da:da";
 in
 {
   microvm = {
