@@ -7,11 +7,13 @@ in
     hypervisor = "qemu";
     mem = 2048;
     vcpu = 6;
-    interfaces = [{
+    interfaces = [
+    {
       type = "tap";
-      id = "serv-ddz-prod";
+      id = "flpk-ddz-prod";
       mac = mac_addr;
-    }];
+    }
+    ];
     shares = [
       {
         source = "/nix/store";
@@ -47,12 +49,12 @@ in
     useDHCP = false;
     mac = mac_addr;
     matchOn = "mac";
-    addr4 = "172.20.73.73/25";
+    addr4 = "45.158.40.169/27";
     dns = [ "172.20.73.8" "9.9.9.9" ];
     routes = [
       {
         routeConfig = {
-          Gateway = "172.20.73.1";
+          Gateway = "45.158.40.160";
           Destination = "0.0.0.0/0";
         };
       }
