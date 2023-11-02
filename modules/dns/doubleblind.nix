@@ -8,6 +8,8 @@
     extraDomainNames = [ "*.science.tanneberger.me" ];
   };
 
+  users.users.nginx.extraGroups = [ "acme" ];
+
   services.nginx = {
     enable = true;
     recommendedGzipSettings = true;
@@ -19,6 +21,7 @@
     virtualHosts = {
       #"science.tanneberger.me" = {
       #  enableACME = true;
+      #  serverAliases = [ "*.science.tanneberger.me" ];
       #};
       #"~^(?<domain>[^.]+)\.science\.tanneberger\.me$" = {
       #enableACME = true;
@@ -29,7 +32,10 @@
         #enableACME = true;
         forceSSL = true;
         root = "/var/lib/doubleblind/sites/$host";
+        useACMEHost = "science.tanneberger.me";
+        #sslCertificate = (config.security.acme.cets."science.tanneberger.me".directory + "cert.pem");
       };
+
     };
   };
 }
