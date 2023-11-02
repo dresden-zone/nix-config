@@ -8,11 +8,11 @@ in
     mem = 2048;
     vcpu = 6;
     interfaces = [
-    {
-      type = "tap";
-      id = "flpk-ddz-prod";
-      mac = mac_addr;
-    }
+      {
+        type = "tap";
+        id = "flpk-ddz-prod";
+        mac = mac_addr;
+      }
     ];
     shares = [
       {
