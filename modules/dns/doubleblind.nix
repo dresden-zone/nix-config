@@ -10,6 +10,8 @@
 
   users.users.nginx.extraGroups = [ "acme" ];
 
+  networking.firewall.allowedTCPPorts = [ 443 80 ];
+
   services.nginx = {
     enable = true;
     recommendedGzipSettings = true;
