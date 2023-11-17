@@ -24,7 +24,7 @@
         host	all	all	::1/128	trust
       '';
     package = pkgs.postgresql_14;
-    ensureDatabases = [ "dresden-zone-dns" "doubleblind" ];
+    ensureDatabases = [ "dresden_zone_dns" "doubleblind" ];
     ensureUsers = [
       {
         name = "maid";
@@ -38,7 +38,7 @@
       {
         name = "chef";
         ensurePermissions = {
-          "DATABASE dresden-zone-dns" = "ALL PRIVILEGES";
+          "DATABASE dresden_zone_dns" = "ALL PRIVILEGES";
           "ALL TABLES IN SCHEMA public" = "ALL";
         };
       }
@@ -57,13 +57,13 @@
       $PSQL -c "ALTER ROLE doubleblind WITH PASSWORD '$(cat ${config.sops.secrets.postgres_password_doubleblind.path})';"
 
       # fixup permissions
-      #$PSQL -c "GRANT ALL ON DATABASE dresden-zone-dns TO chef;"
-      #$PSQL -d dresden-zone-dns -c "GRANT ALL ON ALL TABLES IN SCHEMA public TO chef;"
-      #$PSQL -d dresden-zone-dns -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO chef;"
+      #$PSQL -c "GRANT ALL ON DATABASE dresden_zone_dns TO chef;"
+      #$PSQL -d dresden_zone_dns -c "GRANT ALL ON ALL TABLES IN SCHEMA public TO chef;"
+      #$PSQL -d dresden_zone_dns -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO chef;"
 
       # Get maid to SELECT from tables  
-      #$PSQL -c "GRANT CONNECT ON DATABASE dresden-zone-dns TO maid;"
-      #$PSQL -d dresden-zone-dns -c "GRANT SELECT ON zone, record, record_a, record_aaaa, record_cname, record_ns, record_mx, record_txt TO maid;"
+      #$PSQL -c "GRANT CONNECT ON DATABASE dresden_zone_dns TO maid;"
+      #$PSQL -d dresden_zone_dns -c "GRANT SELECT ON zone, record, record_a, record_aaaa, record_cname, record_ns, record_mx, record_txt TO maid;"
     '';
   };
 }
