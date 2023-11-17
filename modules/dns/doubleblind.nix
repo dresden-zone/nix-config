@@ -1,5 +1,5 @@
 { pkgs, config, ... }: {
-  sops.secrets."env_secret_doubleblind".owner = "postgres";
+  sops.secrets."env_secret_doubleblind".owner = config.services.nginx.user;
   sops.secrets.github_token.owner = config.dresden-zone.doubleblind.user;
 
   security.acme.certs."science.tanneberger.me" = {
