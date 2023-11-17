@@ -3,6 +3,7 @@
   sops.secrets.postgres_password_doubleblind = {
     owner = config.dresden-zone.doubleblind.user;
   };
+
   #sops.secrets.postgres_password_maid = {
   #  owner = "postgres";
   #};
@@ -29,6 +30,12 @@
     ensureUsers = [
       {
         name = "maid";
+      }
+      {
+        name = "doubleblind";
+        ensurePermissions = {
+          "DATABASE doubleblind" = "ALL PRIVILEGES";
+        };
       }
       {
         name = "chef";
@@ -59,8 +66,6 @@
       # Get maid to SELECT from tables  
       #$PSQL -c "GRANT CONNECT ON DATABASE dresden-zone-dns TO maid;"
       #$PSQL -d dresden-zone-dns -c "GRANT SELECT ON zone, record, record_a, record_aaaa, record_cname, record_ns, record_mx, record_txt TO maid;"
-
-      $PSQL -c "GRANT ALL ON DATABASE doubleblind TO doubleblind;"
     '';
   };
 }
