@@ -1,6 +1,6 @@
 { lib, pkgs, config, inputs, self, ... }: {
 
-  sops.secrets.postgres_password_doubleblind.owner = config.dresden-zone.doubleblind.user;
+  sops.secrets."postgres_password_doubleblind".owner = config.dresden-zone.doubleblind.user;
 
   #sops.secrets.postgres_password_maid = {
   #  owner = "postgres";
@@ -54,7 +54,7 @@
     };
     postStart = lib.mkAfter ''
       # set pw for the users
-      $PSQL -c "ALTER ROLE doubleblind WITH PASSWORD '$(cat ${config.sops.secrets.postgres_password_doubleblind.path})';"
+      $PSQL -c "ALTER ROLE doubleblind WITH PASSWORD '$(cat ${config.sops.secrets."postgres_password_doubleblind".path})';"
 
       # fixup permissions
       #$PSQL -c "GRANT ALL ON DATABASE dresden_zone_dns TO chef;"
