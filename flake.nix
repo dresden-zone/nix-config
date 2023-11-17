@@ -19,9 +19,13 @@
       url = "github:dresden-zone/dns-web";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    doubleblind = {
+      url = "github:dresden-zone/doubleblind.science";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web }: {
+  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind}: {
     packages."x86_64-linux".dresden-zone-microvm = self.nixosConfigurations.dresden-zone.config.microvm.declaredRunner;
     nixosConfigurations = {
       dresden-zone = nixpkgs.lib.nixosSystem {
@@ -32,6 +36,7 @@
           sops-nix.nixosModules.sops
           dns.nixosModules.chef
           dns.nixosModules.maid
+          doubleblind.nixosModules.doubleblind
           ./hosts/dresden-zone
           ./modules/DresdenZone
           ./modules/dns
@@ -39,6 +44,7 @@
             nixpkgs.overlays = [
               dns.overlays.default
               dns-web.overlays.default
+              doubleblind.overlays.default
             ];
           }
         ];

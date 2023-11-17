@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    #./postgres.nix
+    ./postgres.nix
     ./nginx.nix
     #./chef.nix
     #./maid.nix
