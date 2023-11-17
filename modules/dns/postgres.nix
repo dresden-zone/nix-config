@@ -1,8 +1,6 @@
 { lib, pkgs, config, inputs, self, ... }: {
 
-  sops.secrets.postgres_password_doubleblind = {
-    owner = config.dresden-zone.doubleblind.user;
-  };
+  sops.secrets.postgres_password_doubleblind.owner = config.dresden-zone.doubleblind.user;
 
   #sops.secrets.postgres_password_maid = {
   #  owner = "postgres";
