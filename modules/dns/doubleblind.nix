@@ -2,12 +2,12 @@
   sops.secrets."env_secret_doubleblind".owner = config.services.nginx.user;
   sops.secrets."github_token".owner = config.dresden-zone.doubleblind.user;
 
-  security.acme.certs."science.tanneberger.me" = {
-    webroot = null;
-    dnsProvider = "inwx";
-    credentialsFile = config.sops.secrets."env_secret_doubleblind".path;
-    extraDomainNames = [ "*.science.tanneberger.me" ];
-  };
+  #security.acme.certs."science.tanneberger.me" = {
+  #  webroot = null;
+  #  dnsProvider = "inwx";
+  #  credentialsFile = config.sops.secrets."env_secret_doubleblind".path;
+  #  extraDomainNames = [ "api.science.tanneberger.me" "*.science.tanneberger.me" ];
+  #};
 
 
   #security.acme.certs."doubleblind.science" = {
@@ -32,6 +32,7 @@
     virtualHosts = {
       "science.tanneberger.me" = {
         enableACME = true;
+        forceSSL = true;
         locations."/" = {
           root = "${pkgs.doubleblind-frontend}/bin/";
           index = "index.html";
@@ -39,6 +40,7 @@
       };
       "api.science.tanneberger.me" = {
         enableACME = true;
+        forceSSL = true;
         locations."/" = {
           proxyPass = with config.dresden-zone.doubleblind.http; "http://${host}:${toString port}";
         };
