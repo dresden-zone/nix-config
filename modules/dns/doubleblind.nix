@@ -34,7 +34,7 @@
         enableACME = true;
         forceSSL = true;
         locations."/" = {
-          root = "${pkgs.doubleblind-frontend}/bin/";
+          root = "${pkgs.doubleblind-frontend}/bin/browser/";
           index = "index.html";
         };
       };
