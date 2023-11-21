@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1700579590,
-        "narHash": "sha256-qX36qEi3IfdNljWCIwTx4pwiiTm03o6e6ddeVWq0WAs=",
+        "lastModified": 1700581206,
+        "narHash": "sha256-h4qrC/UZ21+CR8Q/PcR35t8N904jCeiXQ5WoOkOpa5s=",
         "owner": "dresden-zone",
         "repo": "doubleblind.science",
-        "rev": "019ee37873b582b9aff7939de153a11c261bdf21",
+        "rev": "a811ca2c87ebb6d9a9dfeacd079a01f9ce6d3a61",
         "type": "github"
       },
       "original": {
