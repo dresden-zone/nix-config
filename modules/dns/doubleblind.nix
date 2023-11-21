@@ -78,7 +78,7 @@
     };
 
     github = {
-      clientID = "8ada4145996bcf0b40ee";
+      clientID = "Iv1.35a8b170c19c4f62";
       passwordFile = config.sops.secrets."github_token".path;
     };
   };
