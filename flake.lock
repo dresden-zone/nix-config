@@ -9,11 +9,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700241830,
-        "narHash": "sha256-RYmp/pdvoMLZRGz0u0j13XmzHOE4Etj6d4U5XEMTWdg=",
+        "lastModified": 1700345342,
+        "narHash": "sha256-oBfT+k6qDf/2tUpOp5pyJOQ4JgO2H2KT1QRYdq3aYbY=",
         "owner": "dresden-zone",
         "repo": "dns",
-        "rev": "6931f6099186fd8ee1b0a07d44e571fb36275ff6",
+        "rev": "0e248295ad4a060a8bf96c4918bebdaa6aa2c3b8",
         "type": "github"
       },
       "original": {
@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1700564483,
-        "narHash": "sha256-2iHvGKDUPfJ9cgSjvjuO7q2+IGt9SdfK+EgoNG4Srm0=",
+        "lastModified": 1700578405,
+        "narHash": "sha256-JG4dvv4nAF77798TlzNWPXSkfsroeMK+uiNL4joAFnQ=",
         "owner": "dresden-zone",
         "repo": "doubleblind.science",
-        "rev": "566bdb418c5fa5d018bcd8384b4039ae5dacf8cb",
+        "rev": "5f16d0903f8047b1da67bb0cfc516f6b2483f389",
         "type": "github"
       },
       "original": {
