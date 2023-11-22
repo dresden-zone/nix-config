@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1700666159,
-        "narHash": "sha256-iYFFBmN6zbOMvSnQ3leCaqOnmfe7HvgHKJFwOz3GKx8=",
+        "lastModified": 1700693595,
+        "narHash": "sha256-0iiAVYRIo0ZylO86In7cniXFuhVawqMmUNa3BGTDkV4=",
         "owner": "dresden-zone",
         "repo": "doubleblind.science",
-        "rev": "7d514ee2c0fcec62e78d235aef26f13c5660ff79",
+        "rev": "ed1af336ba45571e17b1e6f123a2913efc15f8aa",
         "type": "github"
       },
       "original": {
@@ -242,11 +242,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1700403855,
-        "narHash": "sha256-Q0Uzjik9kUTN9pd/kp52XJi5kletBhy29ctBlAG+III=",
+        "lastModified": 1700501263,
+        "narHash": "sha256-M0U063Ba2DKL4lMYI7XW13Rsk5tfUXnIYiAVa39AV/0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0c5678df521e1407884205fe3ce3cf1d7df297db",
+        "rev": "f741f8a839912e272d7e87ccf4b9dbc6012cdaf9",
         "type": "github"
       },
       "original": {
