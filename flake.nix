@@ -1,7 +1,7 @@
 {
   description = "dresden.zone nix flake";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +25,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind}: {
+  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind }: {
     packages."x86_64-linux".dresden-zone-microvm = self.nixosConfigurations.dresden-zone.config.microvm.declaredRunner;
     nixosConfigurations = {
       dresden-zone = nixpkgs.lib.nixosSystem {
@@ -47,6 +47,14 @@
               doubleblind.overlays.default
             ];
           }
+        ];
+      };
+      hel1 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs self; };
+        modules = [
+          sops-nix.nixosModules.sops
+          ./hosts/hel1
         ];
       };
     };

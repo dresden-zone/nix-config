@@ -47,7 +47,7 @@
       };
 
       #"~^(?<domain>[^.]+)\.science\.tanneberger\.me$" = {
-        #enableACME = true;
+      #enableACME = true;
       #  forceSSL = true;
       #  root = "/var/lib/doubleblind/sites/$domain";
       #};
