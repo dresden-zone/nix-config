@@ -3,9 +3,6 @@ let
   mac_addr = "02:da:da:da:da:db";
 in
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
   boot = {
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
     supportedFilesystems = [ "zfs" ];
@@ -79,11 +76,11 @@ in
     matchOn = "mac";
     dns = [ "9.9.9.9" ];
   };
-
+   
+  networking.useNetworkd = true;
   networking.hostName = "hel1"; # Define your hostname.
   networking.hostId = "17900e62";
 
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
 
