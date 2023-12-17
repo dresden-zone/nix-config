@@ -72,9 +72,6 @@ in
   dresden-zone.net.iface.uplink = {
     name = "eth0";
     useDHCP = true;
-    mac = mac_addr;
-    matchOn = "mac";
-    dns = [ "9.9.9.9" ];
   };
    
   networking.useNetworkd = true;
