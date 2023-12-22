@@ -81,5 +81,7 @@
       clientID = "Iv1.35a8b170c19c4f62";
       passwordFile = config.sops.secrets."github_token".path;
     };
+
+    log_level = "debug";
   };
 }
