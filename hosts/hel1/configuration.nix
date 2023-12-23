@@ -112,6 +112,11 @@
           { ipv6PrefixConfig.Prefix = "fdf7:f9b1:b566::/64"; }
         ];
       };
+      "11-microvm" = {
+        matchConfig.Name = "vm-*";
+        # Attach to the bridge that was configured above
+        networkConfig.Bridge = "microvm";
+      };
     };
   };
 
