@@ -55,9 +55,6 @@ in
       keepalive = 25;
 
       # helpers
-      peer-systems = (lib.filter (x: (x.config.dresden-zone.net.wg.addr4 != cfg.addr4) && (!isNull x.config.dresden-zone.net.wg.addr4))
-        (lib.attrValues self.nixosConfigurations));
-
       endpoint =
         let
           ep = (lib.filter
@@ -67,16 +64,6 @@ in
             (lib.attrValues self.nixosConfigurations));
         in
         assert lib.assertMsg (lib.length ep == 1) "there should be exactly one endpoint"; ep;
-
-      peers = map
-        (x: {
-          wireguardPeerConfig = {
-            PublicKey = x.config.dresden-zone.net.wg.publicKey;
-            AllowedIPs = [ "${x.config.dresden-zone.net.wg.addr4}/32" ];
-            PersistentKeepalive = keepalive;
-          };
-        })
-        peer-systems;
 
       ep = [{
         wireguardPeerConfig =
@@ -110,7 +97,7 @@ in
         })
         cfg.extraPeers;
 
-      peerconf = if isNull cfg.ownEndpoint.host then ep else (peers ++ expeers);
+      peerconf = if isNull cfg.ownEndpoint.host then ep else (expeers);
     in
     lib.mkIf (!isNull cfg.addr4) {
       networking.wireguard.enable = true;

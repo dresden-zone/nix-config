@@ -49,7 +49,7 @@
           }
         ];
       };
-      /*hel1 = nixpkgs.lib.nixosSystem {
+      hel1 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
@@ -57,7 +57,7 @@
           #./modules/DresdenZone
           ./hosts/hel1
         ];
-      };*/
+      };
     };
   };
 }
