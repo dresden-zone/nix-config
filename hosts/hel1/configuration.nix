@@ -1,7 +1,4 @@
-{ inputs, config, lib, pkgs, ... }:
-let
-  mac_addr = "02:da:da:da:da:db";
-in
+{ inputs, config, lib, ... }:
 {
   boot = {
     kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
@@ -69,11 +66,37 @@ in
     };
   };
 
-  dresden-zone.net.iface.uplink = {
-    name = "eth0";
-    useDHCP = true;
+  systemd.network = {
+    netdevs."10-microvm".netdevConfig = {
+      Kind = "bridge";
+      Name = "microvm";
+    };
+    networks = {
+      "10-lan" = {
+        matchConfig.Name = "ens18";
+        networkConfig = {
+          DHCP = "ipv4";
+          IPv6AcceptRA = true;
+        };
+        linkConfig.RequiredForOnline = "routable";
+      };
+      "10-microvm" = {
+        matchConfig.Name = "microvm";
+        networkConfig = {
+          DHCPServer = true;
+          IPv6SendRA = true;
+        };
+        addresses = [
+          { addressConfig.Address = "10.77.1.1/24"; }
+          { addressConfig.Address = "fdf7:f9b1:b566::1/64"; }
+        ];
+        ipv6Prefixes = [
+          { ipv6PrefixConfig.Prefix = "fdf7:f9b1:b566::/64"; }
+        ];
+      };
+    };
   };
-   
+
   networking.useNetworkd = true;
   networking.hostName = "hel1"; # Define your hostname.
   networking.hostId = "17900e62";
