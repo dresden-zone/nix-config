@@ -1,7 +1,7 @@
 keys:
   - &admin_tassilo 91EBE87016391323642A6803B966009D57E69CC6
   - &admin_marcel 46D4682470DBE26790DF9433446F3B093DF81C6A
-  - &dresden-zone age1j80r0awxqv4mu0yn5spvungs88nwrnm6y6aea238ss266nddr3aqshl99y
+  - &dresden-zone age18vkl5lry74xm6xme54jpwc0w2efr4z8g7d8twvszyxxmuw5dqf6qh5lruh
 creation_rules:
   - path_regex: secrets/dresden-zone/[^/]+\.yaml$
     key_groups:
