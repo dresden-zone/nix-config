@@ -26,7 +26,7 @@
   };
 
   outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind }: {
-    packages."x86_64-linux".dresden-zone-microvm = self.nixosConfigurations.dresden-zone.config.microvm.declaredRunner;
+    #packages."x86_64-linux".dresden-zone-microvm = self.nixosConfigurations.dresden-zone.config.microvm.declaredRunner;
     nixosConfigurations = {
       dresden-zone = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -37,8 +37,8 @@
           dns.nixosModules.chef
           dns.nixosModules.maid
           doubleblind.nixosModules.doubleblind
-          ./hosts/dresden-zone
           ./modules/DresdenZone
+          ./hosts/dresden-zone
           ./modules/dns
           {
             nixpkgs.overlays = [
@@ -49,15 +49,15 @@
           }
         ];
       };
-      hel1 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs self; };
-        modules = [
-          sops-nix.nixosModules.sops
-          #./modules/DresdenZone
-          ./hosts/hel1
-        ];
-      };
+      #hel1 = nixpkgs.lib.nixosSystem {
+      #  system = "x86_64-linux";
+      #  specialArgs = { inherit inputs self; };
+      #  modules = [
+      #    sops-nix.nixosModules.sops
+      #    #./modules/DresdenZone
+      #    ./hosts/hel1
+      #  ];
+      #};
     };
   };
 }
