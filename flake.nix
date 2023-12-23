@@ -54,7 +54,7 @@
         specialArgs = { inherit inputs self; };
         modules = [
           sops-nix.nixosModules.sops
-          ./modules/DresdenZone
+          #./modules/DresdenZone
           ./hosts/hel1
         ];
       };

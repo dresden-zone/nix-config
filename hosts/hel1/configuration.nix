@@ -8,6 +8,13 @@
   hardware = {
     enableRedistributableFirmware = true;
   };
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = [ "nix-command" "flakes" ];
+    trusted-substituters = [ "https://nix-community.cachix.org" ];
+    trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+    trusted-users = [ "@wheel" ];
+  };
 
   # force builds to use nix deamon, also if user is root
   environment.variables = {
@@ -65,7 +72,18 @@
       '';
     };
   };
+  services = {
+    openssh = {
+      enable = true;
+    };
+  };
 
+
+  users.users = {
+    root.openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK255EY8KUx5cMXSuoERXJSzVnkDUM+y8sMAVrRoDBnn marcel"
+    ];
+  };
   systemd.network = {
     netdevs."10-microvm".netdevConfig = {
       Kind = "bridge";
