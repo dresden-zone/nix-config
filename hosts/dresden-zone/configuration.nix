@@ -4,7 +4,7 @@ let
 in
 {
   microvm = {
-    hypervisor = "qemu";
+    hypervisor = "cloud-hypervisor";
     mem = 2048;
     vcpu = 6;
     interfaces = [
