@@ -22,13 +22,10 @@
             }];
           };
 
-
-
-
           networking.useNetworkd = true;
-          systemd.network.    networks = {
+          systemd.network.networks = {
             "10-lan" = {
-              matchConfig.Name = "ens18";
+              matchConfig.Type = "ether";
               networkConfig = {
                 DHCP = "ipv4";
                 IPv6AcceptRA = true;
@@ -36,7 +33,6 @@
               linkConfig.RequiredForOnline = "routable";
             };
           };
-
         };
       };
     };

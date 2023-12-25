@@ -1,8 +1,8 @@
 { inputs, ... }: {
   imports = [
-    #inputs.microvm.nixosModules.host
+    inputs.microvm.nixosModules.host
     ./configuration.nix
     ./hardware-configuration.nix
-    #./test-vm.nix
+    ./test-vm.nix
   ];
 }
