@@ -1,6 +1,8 @@
 { pkgs, config, ... }: {
   sops.secrets."env_secret_doubleblind".owner = config.services.nginx.user;
-  sops.secrets."github_token".owner = config.dresden-zone.doubleblind.user;
+  sops.secrets."github_client_secret".owner = config.dresden-zone.doubleblind.user;
+  sops.secrets."github_hmac_secret".owner = config.dresden-zone.doubleblind.user;
+
 
   security.acme.certs."science.tanneberger.me" = {
     webroot = null;
@@ -79,7 +81,8 @@
 
     github = {
       clientID = "Iv1.35a8b170c19c4f62";
-      passwordFile = config.sops.secrets."github_token".path;
+      passwordFileClientSecret = config.sops.secrets.github_client_secret.path;
+      passwordFileHMACSecret = config.sops.secrets.github_hmac_secret.path;
     };
 
     log_level = "debug";
