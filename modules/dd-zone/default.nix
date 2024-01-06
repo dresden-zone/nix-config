@@ -5,7 +5,7 @@ in
 {
   options = {
     dd-zone = {
-      enbale = lib.mkEnableOption "Enable common dd-zone nix configuration.";
+      enable = lib.mkEnableOption "Enable common dd-zone nix configuration.";
       modules = {
         zfs = lib.mkEnableOption "Enable zfs nix configuration.";
       };

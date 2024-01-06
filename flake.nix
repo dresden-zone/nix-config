@@ -70,8 +70,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
-           ./modules/common/default.nix
-           ./hosts/hel1/default.nix
+          ./modules/dd-zone
+          ./hosts/hel1/default.nix
         ];
       };
     };

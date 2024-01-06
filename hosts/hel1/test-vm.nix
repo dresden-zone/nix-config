@@ -23,9 +23,8 @@
               proto = "virtiofs";
             }];
           };
-          imports = [
-            ../../common.nix
-          ];
+
+          dd-zone.enable = true;
 
           networking.useNetworkd = true;
           systemd.network.networks = {
