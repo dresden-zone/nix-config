@@ -100,10 +100,6 @@
       };
       "10-microvm" = {
         matchConfig.Name = "microvm";
-        networkConfig = {
-          DHCPServer = true;
-          IPv6SendRA = true;
-        };
         addresses = [
           { addressConfig.Address = "10.77.1.1/24"; }
           { addressConfig.Address = "fdf7:f9b1:b566::1/64"; }

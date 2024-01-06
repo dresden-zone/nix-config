@@ -7,6 +7,7 @@
           microvm = {
             mem = 1024;
             vcpu = 2;
+            hypervisor = "cloud-hypervisor";
 
             interfaces = [{
               type = "tap";
@@ -26,15 +27,17 @@
           systemd.network.networks = {
             "10-lan" = {
               matchConfig.Type = "ether";
-              networkConfig = {
-                DHCP = "ipv4";
-                IPv6AcceptRA = true;
-              };
+              addresses = [
+                { addressConfig.Address = "10.77.1.2/24"; }
+                { addressConfig.Address = "fdf7:f9b1:b566::2/64"; }
+              ];
               linkConfig.RequiredForOnline = "routable";
             };
           };
+          system.stateVersion = "23.11";
         };
       };
     };
   };
 }
+
