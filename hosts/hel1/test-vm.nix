@@ -35,6 +35,10 @@
                 { addressConfig.Address = "10.77.1.2/24"; }
                 { addressConfig.Address = "fdf7:f9b1:b566::2/64"; }
               ];
+              routes = [
+                { routeConfig.Gateway = "10.77.1.1"; }
+                { routeConfig.Gateway = "fdf7:f9b1:b566::1"; }
+              ];
               linkConfig.RequiredForOnline = "routable";
             };
           };
