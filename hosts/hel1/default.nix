@@ -2,10 +2,10 @@
   imports = [
     inputs.microvm.nixosModules.host
 
-    ../../common.nix
-    ../../modules/zfs.nix
-    ../../modules/sops.nix
-    ../../modules/keymap.nix
+    ../../modules/common/common.nix
+    ../../modules/common/zfs.nix
+    ../../modules/common/sops.nix
+    ../../modules/common/keymap.nix
 
     ./configuration.nix
     ./hardware-configuration.nix
