@@ -1,51 +1,5 @@
-{ inputs, config, lib, ... }:
+{ ... }:
 {
-  boot = {
-    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
-    supportedFilesystems = [ "zfs" ];
-  };
-
-  hardware = {
-    enableRedistributableFirmware = true;
-  };
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-substituters = [ "https://nix-community.cachix.org" ];
-    trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
-    trusted-users = [ "@wheel" ];
-  };
-
-  # force builds to use nix deamon, also if user is root
-  environment.variables = {
-    NIX_REMOTE = "daemon";
-    NIX_PATH = lib.mkForce "nixpkgs=${inputs.nixpkgs}";
-  };
-
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LC_TIME = "de_DE.UTF-8";
-    };
-  };
-
-  services = {
-    zfs = {
-      autoSnapshot = {
-        enable = true;
-        frequent = 4;
-        hourly = 7;
-        daily = 6;
-        weekly = 2;
-        monthly = 1;
-      };
-
-      autoScrub = {
-        enable = true;
-      };
-    };
-  };
-
   boot = {
     tmp = {
       useTmpfs = true;
@@ -78,12 +32,6 @@
     };
   };
 
-
-  users.users = {
-    root.openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK255EY8KUx5cMXSuoERXJSzVnkDUM+y8sMAVrRoDBnn marcel"
-    ];
-  };
   systemd.network = {
     netdevs."10-microvm".netdevConfig = {
       Kind = "bridge";

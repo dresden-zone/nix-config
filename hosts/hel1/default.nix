@@ -1,9 +1,11 @@
 { inputs, ... }: {
   imports = [
-    inputs.sops-nix.nixosModules.sops
     inputs.microvm.nixosModules.host
 
     ../../common.nix
+    ../../modules/zfs.nix
+    ../../modules/sops.nix
+    ../../modules/keymap.nix
 
     ./configuration.nix
     ./hardware-configuration.nix
