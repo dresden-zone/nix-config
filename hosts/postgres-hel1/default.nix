@@ -6,15 +6,22 @@
   dd-zone = {
     enable = true;
 
-    networking = {
-      hostname = "postgres";
-      v4 = {
-        addr = "10.44.1.2/24";
-        gateway = "10.44.1.1";
-      };
-      v6 = {
-        addr = "fd44:1::2/64";
-        gateway = "fd44:1::1/64";
+    microvm = {
+      enable = true;
+      networking = {
+        hostname = "postgres";
+        site = "hel1";
+        lan = {
+          mac = "2e:28:00:60:c2:1b";
+          v4 = {
+            addr = "10.44.1.2/24";
+            gateway = "10.44.1.1";
+          };
+          v6 = {
+            addr = "fd44:1::2/64";
+            gateway = "fd44:1::1/64";
+          };
+        };
       };
     };
   };

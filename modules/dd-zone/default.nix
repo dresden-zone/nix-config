@@ -5,7 +5,7 @@
     ./keymap.nix
     ./postgresql.nix
     ./zfs.nix
-    ./networking.nix
+    ./microvm.nix
   ];
 
   options = {

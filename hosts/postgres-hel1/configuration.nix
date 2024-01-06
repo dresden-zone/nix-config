@@ -3,11 +3,6 @@
     hypervisor = "cloud-hypervisor";
     mem = 2048;
     vcpu = 6;
-    interfaces = [{
-      type = "tap";
-      id = "vm-test";
-      mac = "2e:28:00:60:c2:1b";
-    }];
 
     shares = [{
       source = "/nix/store";
