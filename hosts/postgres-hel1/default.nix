@@ -10,8 +10,8 @@
       enable = true;
       shares = true;
       networking = {
-        hostname = "postgres";
         site = "hel1";
+        hostName = "postgres";
         lan = {
           mac = "2e:28:00:60:c2:1b";
           v4 = {

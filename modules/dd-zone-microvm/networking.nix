@@ -6,7 +6,7 @@ in
   options = {
     dd-zone.microvm = {
       networking = {
-        hostname = lib.mkOption {
+        hostName = lib.mkOption {
           type = lib.types.str;
           description = "Hostname of the microvm.";
         };
@@ -47,12 +47,12 @@ in
   config = lib.mkIf cfg.enable {
     microvm.interfaces = [{
       type = "tap";
-      id = "vm-${cfg.networking.hostname}";
+      id = "vm-${cfg.networking.hostName}";
       mac = cfg.networking.lan.mac;
     }];
 
     networking.useNetworkd = true;
-    networking.hostname = cfg.networking.hostname;
+    networking.hostName = cfg.networking.hostName;
 
     systemd.network.networks = {
       "10-lan" = {
