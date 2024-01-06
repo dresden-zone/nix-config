@@ -29,7 +29,7 @@
 
   outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind, ... }: {
     nixosConfigurations = {
-      c3d2-dns = nixpkgs.lib.nixosSystem {
+      dns-c3d2 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
@@ -49,7 +49,7 @@
           }
         ];
       };
-      doubleblind = nixpkgs.lib.nixosSystem {
+      doubleblind-c3d2 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
@@ -58,12 +58,22 @@
           doubleblind.nixosModules.doubleblind
           ./modules/DresdenZone
           ./modules/doubleblind
-          ./hosts/dresden-zone
+          ./hosts/doubleblind-c3d2
           {
             nixpkgs.overlays = [
               doubleblind.overlays.default
             ];
           }
+        ];
+      };
+      postgres-hel1 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs self; };
+        modules = [
+          microvm.nixosModules.microvm
+          sops-nix.nixosModules.sops
+          ./modules/dd-zone
+          ./hosts/postgres-hel1
         ];
       };
       hel1 = nixpkgs.lib.nixosSystem {
