@@ -49,11 +49,11 @@
       "10-microvm" = {
         matchConfig.Name = "microvm";
         addresses = [
-          { addressConfig.Address = "10.77.1.1/24"; }
-          { addressConfig.Address = "fdf7:f9b1:b566::1/64"; }
+          { addressConfig.Address = "10.44.1.1/24"; }
+          { addressConfig.Address = "fd44:1::1/64"; }
         ];
         ipv6Prefixes = [
-          { ipv6PrefixConfig.Prefix = "fdf7:f9b1:b566::/64"; }
+          { ipv6PrefixConfig.Prefix = "fd44:1::/64"; }
         ];
       };
       "11-microvm" = {

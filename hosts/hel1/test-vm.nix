@@ -32,12 +32,12 @@
             "10-lan" = {
               matchConfig.Type = "ether";
               addresses = [
-                { addressConfig.Address = "10.77.1.2/24"; }
-                { addressConfig.Address = "fdf7:f9b1:b566::2/64"; }
+                { addressConfig.Address = "10.44.1.2/24"; }
+                { addressConfig.Address = "fd44:1::2/64"; }
               ];
               routes = [
-                { routeConfig.Gateway = "10.77.1.1"; }
-                { routeConfig.Gateway = "fdf7:f9b1:b566::1"; }
+                { routeConfig.Gateway = "10.44.1.1"; }
+                { routeConfig.Gateway = "fd44:1::1"; }
               ];
               linkConfig.RequiredForOnline = "routable";
             };
