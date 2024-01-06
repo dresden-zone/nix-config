@@ -8,6 +8,7 @@
 
     microvm = {
       enable = true;
+      shares = true;
       networking = {
         hostname = "postgres";
         site = "hel1";

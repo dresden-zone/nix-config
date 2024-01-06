@@ -53,6 +53,7 @@ in
     }];
 
     networking.useNetworkd = true;
+    networking.hostname = cfg.networking.hostname;
 
     systemd.network.networks = {
       "10-lan" = {
