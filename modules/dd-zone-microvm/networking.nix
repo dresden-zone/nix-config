@@ -59,7 +59,7 @@ in
         matchConfig.MACAddress = cfg.networking.lan.mac;
         addresses = [
           { addressConfig.Address = cfg.networking.lan.v4.addr; }
-          { addressConfig.Address = cfg.networking.lan.v4.addr; }
+          { addressConfig.Address = cfg.networking.lan.v6.addr; }
         ];
         routes = [
           { routeConfig.Gateway = cfg.networking.lan.v4.gateway; }
