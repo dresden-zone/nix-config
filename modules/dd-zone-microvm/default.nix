@@ -1,5 +1,5 @@
 { ... }: {
   imports = [
-    ./microvm.nix
+    ./networking.nix
   ];
 }
