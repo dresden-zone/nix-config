@@ -70,7 +70,8 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
-          ./hosts/hel1/default.nix
+           ./modules/common/default.nix
+           ./hosts/hel1/default.nix
         ];
       };
     };
