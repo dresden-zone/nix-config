@@ -27,7 +27,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind }: {
+  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind, ... }: {
     nixosConfigurations = {
       dresden-zone = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

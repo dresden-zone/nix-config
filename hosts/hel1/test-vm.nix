@@ -1,8 +1,9 @@
-{ ... }:
+{ inputs, ... }:
 {
   microvm = {
     vms = {
       my-microvm = {
+        specialArgs = { inherit inputs; };
         config = {
           microvm = {
             mem = 1024;
@@ -22,6 +23,9 @@
               proto = "virtiofs";
             }];
           };
+          imports = [
+            ../../common.nix
+          ];
 
           networking.useNetworkd = true;
           systemd.network.networks = {
@@ -34,6 +38,7 @@
               linkConfig.RequiredForOnline = "routable";
             };
           };
+          services.openssh.enable = true;
           system.stateVersion = "23.11";
         };
       };
