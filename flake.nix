@@ -73,6 +73,7 @@
           microvm.nixosModules.microvm
           sops-nix.nixosModules.sops
           ./modules/dd-zone
+          ./modules/dd-zone-microvm
           ./hosts/postgres-hel1
         ];
       };
@@ -80,7 +81,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
-          inputs.microvm.nixosModules.host
+          microvm.nixosModules.host
           ./modules/dd-zone
           ./hosts/hel1/default.nix
         ];
