@@ -5,7 +5,6 @@ in
 {
   options = {
     dd-zone.microvm = {
-      enable = lib.mkEnableOption "Enable common dd-zone nix configuration.";
       networking = {
         hostname = lib.mkOption {
           type = lib.types.str;
