@@ -3,7 +3,7 @@ let
   cfg = config.dd-zone;
 in
 {
-  imports = lib.mkIf cfg.microvm.host [
-    inputs.microvm.nixosModules.host
+  imports = [
+    (lib.optional cfg.microvm.host inputs.microvm.nixosModules.host)
   ];
 }

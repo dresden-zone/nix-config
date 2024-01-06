@@ -6,7 +6,8 @@
     ./postgresql.nix
     ./sops.nix
     ./zfs.nix
-  ];
+    ./microvm-host.nix
+    ];
 
   options = {
     dd-zone = {
