@@ -69,7 +69,6 @@ in
   users.users.root = {
     openssh.authorizedKeys.keyFiles = [
       ../../keys/ssh/tassilo
-      ../../keys/ssh/melody
       ../../keys/ssh/marcel
     ];
   };
