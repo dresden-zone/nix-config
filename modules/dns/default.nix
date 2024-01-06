@@ -4,6 +4,5 @@
     ./nginx.nix
     #./chef.nix
     #./maid.nix
-    ./doubleblind.nix
   ];
 }

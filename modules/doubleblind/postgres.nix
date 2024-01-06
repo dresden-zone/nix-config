@@ -1,5 +1,7 @@
 { lib, pkgs, config, inputs, self, ... }: {
 
+  sops.secrets."postgres_password_doubleblind".owner = config.dresden-zone.doubleblind.user;
+
   #sops.secrets.postgres_password_maid = {
   #  owner = "postgres";
   #};
@@ -22,16 +24,15 @@
         host	all	all	::1/128	trust
       '';
     package = pkgs.postgresql_14;
-    ensureDatabases = [ "dresden_zone_dns" ];
+    ensureDatabases = [ "doubleblind" ];
     ensureUsers = [
       {
         name = "maid";
       }
       {
-        name = "chef";
+        name = "doubleblind";
         ensurePermissions = {
-          "DATABASE dresden_zone_dns" = "ALL PRIVILEGES";
-          "ALL TABLES IN SCHEMA public" = "ALL";
+          "DATABASE doubleblind" = "ALL PRIVILEGES";
         };
       }
     ];
@@ -45,14 +46,8 @@
       TimeoutSec = lib.mkForce 3000;
     };
     postStart = lib.mkAfter ''
-      # fixup permissions
-      #$PSQL -c "GRANT ALL ON DATABASE dresden_zone_dns TO chef;"
-      #$PSQL -d dresden_zone_dns -c "GRANT ALL ON ALL TABLES IN SCHEMA public TO chef;"
-      #$PSQL -d dresden_zone_dns -c "GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO chef;"
-
-      # Get maid to SELECT from tables  
-      #$PSQL -c "GRANT CONNECT ON DATABASE dresden_zone_dns TO maid;"
-      #$PSQL -d dresden_zone_dns -c "GRANT SELECT ON zone, record, record_a, record_aaaa, record_cname, record_ns, record_mx, record_txt TO maid;"
+      # set pw for the users
+      $PSQL -c "ALTER ROLE doubleblind WITH PASSWORD '$(cat ${config.sops.secrets."postgres_password_doubleblind".path})';"
     '';
   };
 }
