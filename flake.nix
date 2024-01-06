@@ -2,15 +2,17 @@
   description = "dresden.zone nix flake";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    flake-utils.url = "github:numtide/flake-utils";
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
     };
     microvm = {
       url = "github:astro/microvm.nix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
     };
-
     dns = {
       url = "github:dresden-zone/dns";
       inputs.nixpkgs.follows = "nixpkgs";
