@@ -1,16 +1,13 @@
-{ lib, config, ... }:
-let
-  cfg = config.dd-zone;
-in
+{ lib, ... }:
 {
   imports = [
     ./common.nix
     ./keymap.nix
     ./postgresql.nix
     ./sops.nix
-
-    #(lib.optional cfg.modules.zfs ./zfs.nix)
+    ./zfs.nix
   ];
+
   options = {
     dd-zone = {
       enable = lib.mkEnableOption "Enable common dd-zone nix configuration.";
