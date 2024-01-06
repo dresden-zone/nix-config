@@ -14,6 +14,9 @@
       modules = {
         zfs = lib.mkEnableOption "Enable zfs nix configuration.";
       };
+      microvm = {
+        host = lib.mkEnableOption "Enable microvm host configuration.";
+      };
     };
   };
 }

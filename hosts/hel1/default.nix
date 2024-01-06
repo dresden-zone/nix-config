@@ -8,5 +8,6 @@
   dd-zone = {
     enable = true;
     modules.zfs = true;
+    microvm.host = true;
   };
 }
