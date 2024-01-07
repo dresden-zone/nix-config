@@ -2,12 +2,22 @@ keys:
   - &admin_tassilo 91EBE87016391323642A6803B966009D57E69CC6
   - &admin_marcel 46D4682470DBE26790DF9433446F3B093DF81C6A
   - &dresden-zone age18vkl5lry74xm6xme54jpwc0w2efr4z8g7d8twvszyxxmuw5dqf6qh5lruh
+  - &postgres-hel1 age1weuzclujevy0z3nmxxta3v2d4dwsjxhd0gtmn8qzy3l3z2mpdy6svk23nt
+
 creation_rules:
-  - path_regex: secrets/dresden-zone/[^/]+\.yaml$
+  - path_regex: secrets/dresden-zone/secrets.yaml
     key_groups:
       - pgp:
         - *admin_tassilo
         - *admin_marcel
         age:
         - *dresden-zone
+
+  - path_regex: secrets/dresden-zone/postgres-hel1.yaml
+    key_groups:
+      - pgp:
+        - *admin_tassilo
+        - *admin_marcel
+        age:
+        - *postgres-hel1
   

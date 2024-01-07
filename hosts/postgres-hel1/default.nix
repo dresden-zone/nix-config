@@ -25,5 +25,10 @@
         };
       };
     };
+
+    acme = [{
+      domainName = "hel1.dresden.zone";
+      extraDomainNames = [ "*.hel1.dresden.zone" ];
+    }];
   };
 }

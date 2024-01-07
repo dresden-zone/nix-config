@@ -82,6 +82,7 @@
         specialArgs = { inherit inputs self; };
         modules = [
           microvm.nixosModules.host
+          sops-nix.nixosModules.sops
           ./modules/dd-zone
           ./hosts/hel1/default.nix
         ];
