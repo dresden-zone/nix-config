@@ -1,6 +1,8 @@
 { ... }: {
   imports = [
     ./configuration.nix
+    ./postgres.nix
+    ./pgadmin.nix
   ];
 
   dd-zone = {

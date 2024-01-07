@@ -2,6 +2,16 @@
 {
   sops.secrets."pgadmin/init_admin_pw".owner = config.systemd.services.pgadmin.serviceConfig.User;
 
+  services.postgresql = {
+    ensureDatabases = [ "pgadmin" ];
+    ensureUsers = [{
+      name = "pgadmin";
+      ensureDBOwnership = true;
+      # used to manager other databases
+      ensureClauses.superuser = true;
+    }];
+  };
+
   services.pgadmin = {
     enable = true;
     initialEmail = "admin@dresden.zone";
