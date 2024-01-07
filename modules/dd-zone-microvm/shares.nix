@@ -17,14 +17,14 @@ in
         socket = "store.socket";
       }
       {
-        source = "/var/lib/microvms/${config.networking.hostName}/etc";
+        source = "/var/lib/microvms/${config.dd-zone.microvm.networking.hostName}-${config.dd-zone.microvm.networking.hostName}/etc";
         mountPoint = "/etc";
         tag = "etc";
         proto = "virtiofs";
         socket = "etc.socket";
       }
       {
-        source = "/var/lib/microvms/${config.networking.hostName}/var";
+        source = "/var/lib/microvms/${config.dd-zone.microvm.networking.hostName}-${config.dd-zone.microvm.networking.hostName}/var";
         mountPoint = "/var";
         tag = "var";
         proto = "virtiofs";
