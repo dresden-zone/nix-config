@@ -10,10 +10,6 @@ in
           type = lib.types.str;
           description = "Hostname of the microvm.";
         };
-        site = lib.mkOption {
-          type = lib.types.enum [ "hel1" "c3d2" ];
-          description = "Site where the microvm is deployed.";
-        };
         lan = {
           mac = lib.mkOption {
             type = lib.types.str;

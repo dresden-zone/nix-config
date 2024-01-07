@@ -11,6 +11,10 @@ in
   options = {
     dd-zone.microvm = {
       enable = lib.mkEnableOption "Enable common dd-zone nix configuration.";
+      site = lib.mkOption {
+        type = lib.types.enum [ "hel1" "c3d2" ];
+        description = "Site where the microvm is deployed.";
+      };
     };
   };
 

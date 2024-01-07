@@ -9,8 +9,8 @@
     microvm = {
       enable = true;
       shares = true;
+      site = "hel1";
       networking = {
-        site = "hel1";
         hostName = "postgres";
         lan = {
           mac = "2e:28:00:60:c2:1b";
