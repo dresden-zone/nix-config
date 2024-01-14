@@ -5,6 +5,7 @@
     # ./pgadmin.nix
   ];
 
+  networking.useDHCP = false;
   networking.useNetworkd = false;
   systemd.network.enable = false;
 
