@@ -5,6 +5,9 @@
     # ./pgadmin.nix
   ];
 
+  networking.useNetworkd = false;
+  systemd.network.enable = false;
+
   microvm.interfaces = [{
     type = "tap";
     id = "vm-postgres";
