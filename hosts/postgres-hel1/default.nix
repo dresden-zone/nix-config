@@ -2,9 +2,46 @@
   imports = [
     ./configuration.nix
     ./postgres.nix
-   # ./pgadmin.nix
+    # ./pgadmin.nix
   ];
 
+  microvm.interfaces = [{
+    type = "tap";
+    id = "vm-postgres";
+    mac = "2e:28:00:60:c2:1b";
+  }];
+
+  networking.ifstate = {
+    enable = true;
+    settings = {
+      interfaces = [{
+        name = "ens2";
+        addresses = [
+          "10.44.1.2/24"
+          "fd44:1::2/64"
+        ];
+        link = {
+          state = "up";
+          kind = "physical";
+          address = "2e:28:00:60:c2:1b";
+        };
+      }];
+      routing = {
+        routes = [
+          {
+            to = "0.0.0.0/0";
+            dev = "ens2";
+            via = "10.44.1.1";
+          }
+          {
+            to = "fd44::/16";
+            dev = "ens2";
+            via = "fd44:1::1/64";
+          }
+        ];
+      };
+    };
+  };
   dd-zone = {
     enable = true;
 
@@ -14,17 +51,16 @@
       site = "hel1";
       networking = {
         hostName = "postgres";
-        lan = {
-          mac = "2e:28:00:60:c2:1b";
-          v4 = {
-            addr = "10.44.1.2/24";
-            gateway = "10.44.1.1";
-          };
-          v6 = {
-            addr = "fd44:1::2/64";
-            gateway = "fd44:1::1/64";
-          };
-        };
+        #          lan = {
+        #            mac = "2e:28:00:60:c2:1b";
+        #            v4 = {
+        #              addr = "10.44.1.2/24";
+        #              gateway = "10.44.1.1";
+        #            };
+        #            v6 = {
+        #              addr = "fd44:1::2/64";
+        #              gateway = "fd44:1::1/64";
+        #            };
       };
     };
 
