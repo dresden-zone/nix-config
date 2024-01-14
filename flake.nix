@@ -13,6 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    ifstate = {
+      url = "git+https://codeberg.org/m4rc3l/ifstate";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     dns = {
       url = "github:dresden-zone/dns";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +32,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, dns, dns-web, doubleblind, ... }: {
+  outputs = inputs@{ self, nixpkgs, microvm, sops-nix, ifstate, dns, dns-web, doubleblind, ... }: {
     nixosConfigurations = {
       dns-c3d2 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -72,9 +77,15 @@
         modules = [
           microvm.nixosModules.microvm
           sops-nix.nixosModules.sops
+          ifstate.nixosModules.default
           ./modules/dd-zone
           ./modules/dd-zone-microvm
           ./hosts/postgres-hel1
+          {
+            nixpkgs.overlays = [
+              ifstate.overlays.default
+            ];
+          }
         ];
       };
       hel1 = nixpkgs.lib.nixosSystem {

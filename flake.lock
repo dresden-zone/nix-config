@@ -145,6 +145,29 @@
         "type": "github"
       }
     },
+    "ifstate": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1705265650,
+        "narHash": "sha256-fN1ioxJFAsUZTAVpteIC/uj7STlWJyMVoid6vfuib4c=",
+        "ref": "refs/heads/master",
+        "rev": "5799693e15e3a9d5fb9ac294ded389d0a578a4e0",
+        "revCount": 414,
+        "type": "git",
+        "url": "https://codeberg.org/m4rc3l/ifstate"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://codeberg.org/m4rc3l/ifstate"
+      }
+    },
     "microvm": {
       "inputs": {
         "flake-utils": [
@@ -156,11 +179,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1705057870,
-        "narHash": "sha256-o5Mc/awjkFOVDUm/dx8Es0NcWG5v/kw4Zt3B/ZO+KpE=",
+        "lastModified": 1705263072,
+        "narHash": "sha256-DCqqaNWn9G81U+0Myyr36JrOKitcmS34oBWxqiHjabk=",
         "owner": "astro",
         "repo": "microvm.nix",
-        "rev": "8a8b8c68d15029752b0669a57281e7d2aaf23dd5",
+        "rev": "088ba565537eaef1041a87be5a44ca0daa4e1908",
         "type": "github"
       },
       "original": {
@@ -229,11 +252,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1704874635,
-        "narHash": "sha256-YWuCrtsty5vVZvu+7BchAxmcYzTMfolSPP5io8+WYCg=",
+        "lastModified": 1705183652,
+        "narHash": "sha256-rnfkyUH0x72oHfiSDhuCHDHg3gFgF+lF8zkkg5Zihsw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3dc440faeee9e889fe2d1b4d25ad0f430d449356",
+        "rev": "428544ae95eec077c7f823b422afae5f174dee4b",
         "type": "github"
       },
       "original": {
@@ -299,6 +322,7 @@
         "dns-web": "dns-web",
         "doubleblind": "doubleblind",
         "flake-utils": "flake-utils_2",
+        "ifstate": "ifstate",
         "microvm": "microvm",
         "nixpkgs": "nixpkgs_2",
         "sops-nix": "sops-nix"
@@ -348,11 +372,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1704908274,
-        "narHash": "sha256-74W9Yyomv3COGRmKi8zvyA5tL2KLiVkBeaYmYLjXyOw=",
+        "lastModified": 1705201153,
+        "narHash": "sha256-y0/a4IMDZrc7lAkR7Gcm5R3W2iCBiARHnYZe6vkmiNE=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "c0b3a5af90fae3ba95645bbf85d2b64880addd76",
+        "rev": "70dd0d521f7849338e487a219c1a07c429a66d77",
         "type": "github"
       },
       "original": {
