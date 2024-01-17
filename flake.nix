@@ -1,7 +1,7 @@
 {
   description = "dresden.zone nix flake";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:MarcelCoding/nixpkgs/bird-no-auto-restart";
     flake-utils.url = "github:numtide/flake-utils";
     sops-nix = {
       url = "github:Mic92/sops-nix";
