@@ -40,29 +40,35 @@ in
     };
   };
 
-  #  config = lib.mkIf cfg.enable {
-  #    microvm.interfaces = [{
-  #      type = "tap";
-  #      id = "vm-${cfg.networking.hostName}";
-  #      mac = cfg.networking.lan.mac;
-  #    }];
+  config = lib.mkIf cfg.enable {
+    microvm.interfaces = [{
+      type = "tap";
+      id = "vm-${cfg.networking.hostName}";
+      mac = cfg.networking.lan.mac;
+    }];
 
-  #    networking.useNetworkd = true;
-  #    networking.hostName = cfg.networking.hostName;
+    networking.hostName = cfg.networking.hostName;
 
-  #    systemd.network.networks = {
-  #      "10-lan" = {
-  #        matchConfig.MACAddress = cfg.networking.lan.mac;
-  #        addresses = [
-  #          { addressConfig.Address = cfg.networking.lan.v4.addr; }
-  #          { addressConfig.Address = cfg.networking.lan.v6.addr; }
-  #        ];
-  #        routes = [
-  #          { routeConfig.Gateway = cfg.networking.lan.v4.gateway; }
-  #          { routeConfig.Gateway = cfg.networking.lan.v6.gateway; }
-  #        ];
-  #        linkConfig.RequiredForOnline = "routable";
-  #      };
-  #    };
-  #  };
+    networking.ifstate = {
+      enable = true;
+      settings = {
+        interfaces = [{
+          name = "eth0";
+          addresses = [
+            cfg.networking.lan.v4.addr
+            cfg.networking.lan.v6.addr
+          ];
+          link = {
+            state = "up";
+            kind = "physical";
+            address = cfg.networking.lan.mac;
+          };
+        }];
+        routing.routes = [
+          { to = "10.44.0.0/16"; via = cfg.networking.lan.v4.gateway; }
+          { to = "fd44::/16"; via = cfg.networking.lan.v6.gateway; }
+        ];
+      };
+    };
+  };
 }
