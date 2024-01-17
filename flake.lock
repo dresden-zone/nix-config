@@ -132,11 +132,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1701680307,
-        "narHash": "sha256-kAuep2h5ajznlPMD9rnQyffWG8EM/C73lejGofXvdM8=",
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "4022d587cbbfd70fe950c1e2083a02621806a725",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
         "type": "github"
       },
       "original": {
@@ -155,17 +155,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1705265650,
-        "narHash": "sha256-fN1ioxJFAsUZTAVpteIC/uj7STlWJyMVoid6vfuib4c=",
-        "ref": "refs/heads/master",
-        "rev": "5799693e15e3a9d5fb9ac294ded389d0a578a4e0",
-        "revCount": 414,
+        "lastModified": 1705474790,
+        "narHash": "sha256-jDmdbJrM+cXYqLd6nKgYhTymjl9+7So0sVIjP/YuWvE=",
+        "ref": "refs/heads/main",
+        "rev": "429f8ea4f3c6a8880b4d52a03cb5ac63c53fb5e4",
+        "revCount": 2,
         "type": "git",
-        "url": "https://codeberg.org/m4rc3l/ifstate"
+        "url": "https://codeberg.org/m4rc3l/ifstate.nix"
       },
       "original": {
         "type": "git",
-        "url": "https://codeberg.org/m4rc3l/ifstate"
+        "url": "https://codeberg.org/m4rc3l/ifstate.nix"
       }
     },
     "microvm": {
@@ -252,11 +252,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1705183652,
-        "narHash": "sha256-rnfkyUH0x72oHfiSDhuCHDHg3gFgF+lF8zkkg5Zihsw=",
+        "lastModified": 1705331948,
+        "narHash": "sha256-qjQXfvrAT1/RKDFAMdl8Hw3m4tLVvMCc8fMqzJv0pP4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "428544ae95eec077c7f823b422afae5f174dee4b",
+        "rev": "b8dd8be3c790215716e7c12b247f45ca525867e2",
         "type": "github"
       },
       "original": {
@@ -372,11 +372,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1705201153,
-        "narHash": "sha256-y0/a4IMDZrc7lAkR7Gcm5R3W2iCBiARHnYZe6vkmiNE=",
+        "lastModified": 1705356877,
+        "narHash": "sha256-274jL1cH64DcXUXebVMZBRUsTs3FvFlPIPkCN/yhSnI=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "70dd0d521f7849338e487a219c1a07c429a66d77",
+        "rev": "87755331580fdf23df7e39b46d63ac88236bf42c",
         "type": "github"
       },
       "original": {

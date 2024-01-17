@@ -14,7 +14,7 @@
       inputs.flake-utils.follows = "flake-utils";
     };
     ifstate = {
-      url = "git+https://codeberg.org/m4rc3l/ifstate";
+      url = "git+https://codeberg.org/m4rc3l/ifstate.nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };

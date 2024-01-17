@@ -19,7 +19,7 @@
     enable = true;
     settings = {
       interfaces = [{
-        name = "ens2";
+        name = "eth0";
         addresses = [
           "10.44.1.2/24"
           "fd44:1::2/64"
@@ -34,12 +34,10 @@
         routes = [
           {
             to = "0.0.0.0/0";
-            dev = "ens2";
             via = "10.44.1.1";
           }
           {
             to = "fd44::/16";
-            dev = "ens2";
             via = "fd44:1::1";
           }
         ];
