@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1704499739,
-        "narHash": "sha256-bRNfmxxnmFQP/Nuhs4MdtEtvMUbqOWBsySV+0QWgsIc=",
+        "lastModified": 1705700840,
+        "narHash": "sha256-ZdSOGz4fYqIV721OokpCVzdgkfzQigKNlVRR9G5Of8c=",
         "owner": "dresden-zone",
         "repo": "doubleblind.science",
-        "rev": "bf5daf206faf2979c0f9c98ee23edbd2a8da69a5",
+        "rev": "b35a8954e4eb0b45805e9b5aa287296934605b04",
         "type": "github"
       },
       "original": {
@@ -155,11 +155,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1705474790,
-        "narHash": "sha256-jDmdbJrM+cXYqLd6nKgYhTymjl9+7So0sVIjP/YuWvE=",
+        "lastModified": 1705561212,
+        "narHash": "sha256-NNN/KFLH9gv4aebmSVdnrC7hu7/aIi77bMHF+5yBSa0=",
         "ref": "refs/heads/main",
-        "rev": "429f8ea4f3c6a8880b4d52a03cb5ac63c53fb5e4",
-        "revCount": 2,
+        "rev": "690684f5f8854b1ad29b20ea565979a9f12e1ebf",
+        "revCount": 8,
         "type": "git",
         "url": "https://codeberg.org/m4rc3l/ifstate.nix"
       },
@@ -179,11 +179,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1705263072,
-        "narHash": "sha256-DCqqaNWn9G81U+0Myyr36JrOKitcmS34oBWxqiHjabk=",
+        "lastModified": 1705623173,
+        "narHash": "sha256-jecaj1Rr6SKswbXSCPfFtYtnzePGFGiF59bw6jGm6Gs=",
         "owner": "astro",
         "repo": "microvm.nix",
-        "rev": "088ba565537eaef1041a87be5a44ca0daa4e1908",
+        "rev": "ca69f1cf1cad946ccd04e476cc3822ae7088267d",
         "type": "github"
       },
       "original": {
@@ -252,16 +252,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1705331948,
-        "narHash": "sha256-qjQXfvrAT1/RKDFAMdl8Hw3m4tLVvMCc8fMqzJv0pP4=",
-        "owner": "nixos",
+        "lastModified": 1705518574,
+        "narHash": "sha256-BBKu59JVg2AWVgxyotZpQRrzWILEl4znaBpEIjRxGog=",
+        "owner": "MarcelCoding",
         "repo": "nixpkgs",
-        "rev": "b8dd8be3c790215716e7c12b247f45ca525867e2",
+        "rev": "a63a884c0037fb46ee627b9f401544ccdf4afc13",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-23.11",
+        "owner": "MarcelCoding",
+        "ref": "bird-no-auto-restart",
         "repo": "nixpkgs",
         "type": "github"
       }
