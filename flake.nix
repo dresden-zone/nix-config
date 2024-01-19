@@ -54,7 +54,7 @@
           }
         ];
       };
-      doubleblind-c3d2 = nixpkgs.lib.nixosSystem {
+      doubleblind-science = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
