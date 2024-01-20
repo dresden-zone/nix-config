@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  sops.defaultSopsFile = self + /secrets/dresden-zone/postgres-hel1.yaml;
+  sops.defaultSopsFile = self + /secrets/postgres-hel1/secrets.yaml;
 
   microvm = {
     hypervisor = "cloud-hypervisor";

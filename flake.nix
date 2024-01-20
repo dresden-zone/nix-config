@@ -63,7 +63,7 @@
           doubleblind.nixosModules.doubleblind
           ./modules/DresdenZone
           ./modules/doubleblind
-          ./hosts/doubleblind-c3d2
+          ./hosts/doubleblind-science
           {
             nixpkgs.overlays = [
               doubleblind.overlays.default
