@@ -2,6 +2,7 @@
   sops.secrets."env_secret_doubleblind".owner = config.services.nginx.user;
   sops.secrets."github_client_secret".owner = config.dresden-zone.doubleblind.user;
   sops.secrets."github_hmac_secret".owner = config.dresden-zone.doubleblind.user;
+  sops.secrets."github_private_key".owner = config.dresden-zone.doubleblind.user;
 
 
   security.acme.certs."science.tanneberger.me" = {
@@ -83,6 +84,7 @@
       clientID = "Iv1.35a8b170c19c4f62";
       passwordFileClientSecret = config.sops.secrets.github_client_secret.path;
       passwordFileHMACSecret = config.sops.secrets.github_hmac_secret.path;
+      privateKeyFile = config.sops.secrets.github_private_key.path;
     };
 
     log_level = "debug";
