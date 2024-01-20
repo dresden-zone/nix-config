@@ -81,7 +81,7 @@
     };
 
     github = {
-      clientID = "Iv1.35a8b170c19c4f62";
+      clientID = "643641";
       passwordFileClientSecret = config.sops.secrets.github_client_secret.path;
       passwordFileHMACSecret = config.sops.secrets.github_hmac_secret.path;
       privateKeyFile = config.sops.secrets.github_private_key.path;
