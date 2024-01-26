@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1705770849,
-        "narHash": "sha256-z97CuxRC046eVEN1BNSWdXCZN62xA6Rza76B+y7M7yo=",
+        "lastModified": 1706297752,
+        "narHash": "sha256-+3Mn5G+49oPHD2uSwcr6sB3xXPdoL88Qu7xEh62Tr9Y=",
         "owner": "dresden-zone",
         "repo": "doubleblind.science",
-        "rev": "c6eff50b77ec55bee20929b88f316a50ba1eb309",
+        "rev": "17a3f1b0d2aa53ea56ff20967955ed062d8d2c46",
         "type": "github"
       },
       "original": {
@@ -179,11 +179,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1705757072,
-        "narHash": "sha256-jlf6CwiA55kY8RC5nAtqJkz+MjjMDxFCwnmu9GuaFIo=",
+        "lastModified": 1706214321,
+        "narHash": "sha256-42FZWeJQNYgz0ZkclMzShuvjT9TvJNRN78Iu3SEyD4M=",
         "owner": "astro",
         "repo": "microvm.nix",
-        "rev": "794819cf7a2732113f0df21dc7fbe804e6bb2477",
+        "rev": "186b8bf6dbacc1ab55fe8ac8d5a2bbf76a1a70e1",
         "type": "github"
       },
       "original": {
@@ -372,11 +372,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1705356877,
-        "narHash": "sha256-274jL1cH64DcXUXebVMZBRUsTs3FvFlPIPkCN/yhSnI=",
+        "lastModified": 1706130372,
+        "narHash": "sha256-fHZxKH1DhsXPP36a2vJ91Zy6S+q6+QRIFlpLr9fZHU8=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "87755331580fdf23df7e39b46d63ac88236bf42c",
+        "rev": "4606d9b1595e42ffd9b75b9e69667708c70b1d68",
         "type": "github"
       },
       "original": {
