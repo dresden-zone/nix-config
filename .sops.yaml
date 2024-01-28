@@ -1,7 +1,7 @@
 keys:
   - &admin_tassilo 91EBE87016391323642A6803B966009D57E69CC6
   - &admin_marcel 46D4682470DBE26790DF9433446F3B093DF81C6A
-  - &doubleblind-science age1vuzm5rudzypmsx2a7ugnxrwzmppu4psdqn6lela7nazde99nv57s0wznk7
+  - &doubleblind-science age1u8k2k07xj9mldfv97seuygknuen75kp4gymw44g7c79s5cju2dgqzxgd5d
   - &postgres-hel1 age1weuzclujevy0z3nmxxta3v2d4dwsjxhd0gtmn8qzy3l3z2mpdy6svk23nt
 
 creation_rules:
