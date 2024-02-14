@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1707855400,
-        "narHash": "sha256-vGmP0C0lZCwM0eXMaC0/QpF5W12k+GM78j4isEg67qA=",
+        "lastModified": 1708120008,
+        "narHash": "sha256-Wxe5voPgIJo6KA/3nAuUK7GIdcaOEN9MYnblVcjHjsY=",
         "owner": "dresden-zone",
         "repo": "doubleblind.science",
-        "rev": "193089d8d0e8ac3dff9f99865125dfc73a9b392b",
+        "rev": "9551b140727086abbbc60444656fc7ae4ae4d368",
         "type": "github"
       },
       "original": {
@@ -179,11 +179,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1707575232,
-        "narHash": "sha256-jQ69oDRIIC0LCRKKAIZT0f9KnDQQWq2LhiOwCmtiN7I=",
+        "lastModified": 1708030119,
+        "narHash": "sha256-szAJdvg27Mj54npMHnDH+0NYQFJOuuW70h+uvKALy0M=",
         "owner": "astro",
         "repo": "microvm.nix",
-        "rev": "d227a91e7524db9367d0c4f2ed0656ea944bcbe7",
+        "rev": "995b1c5d7fa2a9e64047acbf1e897579178d768c",
         "type": "github"
       },
       "original": {
