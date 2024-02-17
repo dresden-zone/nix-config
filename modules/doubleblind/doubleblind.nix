@@ -20,7 +20,7 @@
   #  extraDomainNames = [ "*.doubleblind.science" ];
   #};
 
-  users.users.nginx.extraGroups = [ "acme" ];
+  users.users.nginx.extraGroups = [ "acme" "doubleblind" ];
 
   networking.firewall.allowedTCPPorts = [ 443 80 ];
 
