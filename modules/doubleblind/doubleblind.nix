@@ -59,6 +59,9 @@
         forceSSL = true;
         root = "/var/lib/doubleblind/sites/$host";
         useACMEHost = "science.tanneberger.me";
+	locations."/" = {
+	    index = "index.html";
+	};
         #sslCertificate = (config.security.acme.certs."science.tanneberger.me".directory + "cert.pem");
       };
 
