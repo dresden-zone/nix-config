@@ -1,16 +1,16 @@
 { self, ... }:
 let
-  mac_addr = "02:da:da:c3:d2:01";
+  mac_addr = "02:fe:fe:c3:d2:01";
 in
 {
   microvm = {
     hypervisor = "cloud-hypervisor";
     mem = 2048;
-    vcpu = 6;
+    vcpu = 4;
     interfaces = [
       {
         type = "tap";
-        id = "flpk-ddz-prod";
+        id = "serv-ddz-prod";
         mac = mac_addr;
       }
     ];
@@ -39,7 +39,7 @@ in
     ];
   };
 
-  networking.hostName = "dresden-zone"; # Define your hostname.
+  networking.hostName = "dresden-zone-dns"; # Define your hostname.
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -49,7 +49,7 @@ in
     useDHCP = false;
     mac = mac_addr;
     matchOn = "mac";
-    addr4 = "45.158.40.169/27";
+    addr4 = "172.20.73.4/25";
     dns = [ "172.20.73.8" "9.9.9.9" ];
     routes = [
       {
@@ -62,7 +62,7 @@ in
   };
 
 
-  sops.defaultSopsFile = self + /secrets/doubleblind-science/secrets.yaml;
+  sops.defaultSopsFile = self + /secrets/dresden-zone/secrets.yaml;
 
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 }

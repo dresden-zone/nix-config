@@ -9,11 +9,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1706880491,
-        "narHash": "sha256-AaQC6Rh3k4afNgZCh5xbq6gCg5BWB6jVOMdscUyPmTU=",
+        "lastModified": 1711994405,
+        "narHash": "sha256-nw4dsAK3fDW5Yg/mtEbQ6lrdE0KHyCzR2isXEgw2w/E=",
         "owner": "dresden-zone",
         "repo": "dns",
-        "rev": "6af73032215297079a0200e8a0379715bf876fd8",
+        "rev": "6b97db641ddf3f9cc0faad1e250e6197d0e4d3df",
         "type": "github"
       },
       "original": {
@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1709334832,
-        "narHash": "sha256-XZAVrZAxcsQkmTcRQ1b2coAmn2AbQYV3rFWI/DJq4so=",
+        "lastModified": 1710704806,
+        "narHash": "sha256-fSTIn1pyYyyRlzGelGP/FO6fRf4pw2etgm+t7spS7E4=",
         "owner": "dresden-zone",
         "repo": "doubleblind.science",
-        "rev": "8e1b4b60dcd174bc9cc0328431c9f2b04916ca51",
+        "rev": "86ec55e6452573284135607d99267d17c73a60de",
         "type": "github"
       },
       "original": {
@@ -132,11 +132,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1709126324,
-        "narHash": "sha256-q6EQdSeUZOG26WelxqkmR7kArjgWCdw5sfJVHPH/7j8=",
+        "lastModified": 1710146030,
+        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "d465f4819400de7c8d874d50b982301f28a84605",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
         "type": "github"
       },
       "original": {
@@ -155,11 +155,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1708383608,
-        "narHash": "sha256-aGpRUK6XD3mpk7GYBQx1NS5tQsE3+VMoauEgOVgHNbY=",
+        "lastModified": 1711875145,
+        "narHash": "sha256-Yat0mIQ9OgYUNqwWYgewmcORlIWtLuwcRk+FBS4Vf6Q=",
         "ref": "refs/heads/main",
-        "rev": "9f94dc4fab64bb37379a938877ebb8747c5561e7",
-        "revCount": 9,
+        "rev": "73c9e9dd869c1ea04e17dbff218e13644181ef05",
+        "revCount": 17,
         "type": "git",
         "url": "https://codeberg.org/m4rc3l/ifstate.nix"
       },
@@ -179,11 +179,11 @@
         "spectrum": "spectrum"
       },
       "locked": {
-        "lastModified": 1709896910,
-        "narHash": "sha256-obNnuyjioEE42xQ3vTpNnsqNUk0r4dPFgERCv1FXyUE=",
+        "lastModified": 1711753492,
+        "narHash": "sha256-lLlXQBebD6wd2m7vjXg2zQ8tfJF2a70RL+zXdbaQqn0=",
         "owner": "astro",
         "repo": "microvm.nix",
-        "rev": "35636572c272bf5fd21300ff845340788e3d99bd",
+        "rev": "1b7c70b198554d0f0306ec153c94906623437aed",
         "type": "github"
       },
       "original": {
@@ -372,11 +372,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1709711091,
-        "narHash": "sha256-L0rSIU9IguTG4YqSj4B/02SyTEz55ACq5t8gXpzteYc=",
+        "lastModified": 1711855048,
+        "narHash": "sha256-HxegAPnQJSC4cbEbF4Iq3YTlFHZKLiNTk8147EbLdGg=",
         "owner": "Mic92",
         "repo": "sops-nix",
-        "rev": "25dd60fdd08fcacee2567a26ba6b91fe098941dc",
+        "rev": "99b1e37f9fc0960d064a7862eb7adfb92e64fa10",
         "type": "github"
       },
       "original": {

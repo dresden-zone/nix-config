@@ -34,7 +34,7 @@
 
   outputs = inputs@{ self, nixpkgs, microvm, sops-nix, ifstate, dns, dns-web, doubleblind, ... }: {
     nixosConfigurations = {
-      dns-c3d2 = nixpkgs.lib.nixosSystem {
+      dresden-zone = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs self; };
         modules = [
@@ -69,33 +69,6 @@
               doubleblind.overlays.default
             ];
           }
-        ];
-      };
-      postgres-hel1 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs self; };
-        modules = [
-          microvm.nixosModules.microvm
-          sops-nix.nixosModules.sops
-          ifstate.nixosModules.default
-          ./modules/dd-zone
-          ./modules/dd-zone-microvm
-          ./hosts/postgres-hel1
-          {
-            nixpkgs.overlays = [
-              ifstate.overlays.default
-            ];
-          }
-        ];
-      };
-      hel1 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs self; };
-        modules = [
-          microvm.nixosModules.host
-          sops-nix.nixosModules.sops
-          ./modules/dd-zone
-          ./hosts/hel1/default.nix
         ];
       };
     };
