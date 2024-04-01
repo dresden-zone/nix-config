@@ -42,7 +42,6 @@
           sops-nix.nixosModules.sops
           dns.nixosModules.chef
           dns.nixosModules.maid
-          doubleblind.nixosModules.doubleblind
           ./modules/DresdenZone
           ./modules/dns
           ./hosts/dresden-zone

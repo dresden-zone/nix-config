@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
 
-  sops.secrets.postgres_password_maid.owner = config.dresden-zone.maid.user;
+  #sops.secrets.postgres_password_maid.owner = config.dresden-zone.maid.user;
 
   dresden-zone.maid = {
     enable = true;
@@ -11,7 +11,7 @@
     database = {
       host = "127.0.0.1";
       port = config.services.postgresql.port;
-      passwordFile = config.sops.secrets.postgres_password_maid.path;
+      passwordFile = "/tmp/bla";#config.sops.secrets.postgres_password_maid.path;
       user = "dresden-zone-dns";
       database = "dresden-zone-dns";
     };

@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
 
-  sops.secrets.postgres_password_chef.owner = config.dresden-zone.chef.user;
+  #sops.secrets.postgres_password_chef.owner = config.dresden-zone.chef.user;
 
   dresden-zone.chef = {
     enable = true;
@@ -11,7 +11,7 @@
     database = {
       host = "127.0.0.1";
       port = config.services.postgresql.port;
-      passwordFile = config.sops.secrets.postgres_password_chef.path;
+      passwordFile = "/tmp/bla";#config.sops.secrets.postgres_password_chef.path;
       user = "dresden-zone-dns";
       database = "dresden-zone-dns";
     };

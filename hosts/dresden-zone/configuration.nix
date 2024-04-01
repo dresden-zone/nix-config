@@ -62,7 +62,7 @@ in
   };
 
 
-  sops.defaultSopsFile = self + /secrets/dresden-zone/secrets.yaml;
+  #sops.defaultSopsFile = self + /secrets/dresden-zone/secrets.yaml;
 
   system.stateVersion = "23.11";
 }
